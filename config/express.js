@@ -9,6 +9,7 @@ const path = require('path');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
+const logger = require('morgan');
 
 module.exports = function(app, config) {
    app.set('port', process.env.PORT || 3000);
