@@ -1,7 +1,5 @@
 language: node_js
 node_js:
   - 6
-before_install:
-    - npm install --global mocha
 install: npm install
-script: npm test
+script: npm start
