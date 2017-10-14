@@ -11,16 +11,16 @@ const apiController = require('./controllers/api');
 
 
 module.exports = function(app) {
-  /**
-   * Primary app routes.
-   */
-  app.get('/', homeController.index);
+   /**
+    * Primary app routes.
+    */
+   app.get('/', homeController.index);
 
-  /**
-   * API routes.
-   */
-  app.get('/api/v1', apiController.getApi);
+   /**
+    * API routes.
+    */
+   app.get('/api/v1', apiController.getApi);
 
 
-  return app;
+   return app;
 }
