@@ -21,7 +21,7 @@ $ cd ../project_name<br>
 $ docker build -t api-rest-project .<br>
 $ docker-compose up<br>
 
-Open your favorite Browser at this link http://localhost:3000 <br
+Open your favorite Browser at this link http://localhost:3000 <br>
 
 # License
 
