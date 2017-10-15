@@ -1,4 +1,4 @@
-# API-REST-Project 
+# API-REST-Project
 [![Build Status](https://travis-ci.org/SombreroElGringo/API-REST-Project.svg?branch=develop)](https://travis-ci.org/SombreroElGringo/API-REST-Project) <br>
 API RESTful project
 
@@ -11,6 +11,17 @@ Clone or Download the project and open your terminal<br>
  $ npm start <br>
 
 Open your favorite Browser at this link http://localhost:3000 <br>
+
+# Docker
+
+First install [Docker](https://docs.docker.com/docker-for-mac/install/)!<br>
+<br>
+Open the project in your terminal<br>
+$ cd ../project_name<br>
+$ docker build -t api-rest-project .<br>
+$ docker-compose up<br>
+
+Open your favorite Browser at this link http://localhost:3000 <br
 
 # License
 
