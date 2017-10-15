@@ -1,0 +1,17 @@
+version: '3'
+services:
+   web:
+       image: api-rest-project
+       build: .
+       volumes:
+           - .:/app
+       ports:
+           - 3000:3000
+       environment:
+           - MONGODB_DOCKER_URI=mongodb://mongo/restful-api-test
+       links:
+           - mongo
+   mongo:
+       image: mongo
+       ports:
+           - "27017:27017"
