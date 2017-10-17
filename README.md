@@ -18,6 +18,7 @@ Open your favorite Browser at this link http://localhost:3000 <br>
 First install [Docker](https://docs.docker.com/docker-for-mac/install/)!<br>
 <br>
 Open the project in your terminal<br>
+<br>
 $ cd ../project_name<br>
 $ docker build -t api-rest-project .<br>
 $ docker-compose up<br>

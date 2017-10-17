@@ -2,6 +2,8 @@
  * Module dependencies.
  */
 const path = require('path');
+const auth = require('./helpers/auth');
+
 
 /**
  * Controllers (route handlers).
@@ -19,7 +21,7 @@ module.exports = function(app) {
    /**
     * API routes.
     */
-   app.get('/api/v1', apiController.getApi);
+   app.get('/api/v1', auth.middleware, apiController.getApi);
 
 
    return app;
