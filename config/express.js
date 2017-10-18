@@ -26,7 +26,7 @@ module.exports = function(app, config) {
    app.use(expressValidator());
    app.set('trust proxy', 1)
    app.use(session({
-       secret: 'TD T0D0 L15T',
+       secret: 'API-R3ST-K3Y',
        resave: false,
        saveUninitialized: true,
        cookie: { secure: false }

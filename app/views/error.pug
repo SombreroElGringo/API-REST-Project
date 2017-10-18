@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  center
+    div#errors
+      h1= message
+      h2= status
+      pre #{stack}
+      p If the issues still persist, contact the administrator.
