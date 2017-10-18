@@ -3,7 +3,6 @@
  */
 const express = require('express');
 const chalk = require('chalk');
-const errorHandler = require('errorhandler');
 const dotenv = require('dotenv');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -43,9 +42,33 @@ module.exports = require('./config/express')(app, process);
 module.exports = require('./app/routes')(app);
 
 /**
- * Error Handler.
+ * Error 404
  */
-app.use(errorHandler());
+app.use((req, res, next) => {
+    let err = new Error('Not Found')
+    err.status = 404
+    next(err)
+});
+/**
+ * Error handler
+ */
+app.use((err, req, res, next) => {
+
+    let data = {
+        message: err.message,
+        status: err.status || 500
+    }
+
+    if(app.get('env') === 'development') {
+       data.stack = err.stack
+    }
+
+    res.status(data.status)
+    res.format({
+        html: () => { res.render('error', data) },
+        json: () => { res.send(data) }
+    });
+});
 
 /**
  * Start Express server.
