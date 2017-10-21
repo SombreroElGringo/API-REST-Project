@@ -13,7 +13,7 @@ exports.middleware = (req, res, next) => {
     if(!token || !timestamp) {
         apiError.throwError('token or timestamp is missing!', 400, next);
     } else {
-        if(this.tokenIsValid(token) & this.timestampIsValid(timestamp, next)) {
+        if(this.tokenIsValid(token, next) & this.timestampIsValid(timestamp, next)) {
             return next();
         } else {
             apiError.throwError('token or timestamp is not valid!', 400, next);
@@ -26,7 +26,7 @@ exports.middleware = (req, res, next) => {
  * apiToken = f34c5268b72404747c32e602a72b7bda25349ebba7a400e09d925613d7ec6c11
  */
 
-exports.tokenIsValid = (token) => {
+exports.tokenIsValid = (token, next) => {
     let apiToken = crypto.createHmac('sha256', process.env.SECRET_KEY)
                          .update(process.env.HASH_KEY)
                          .digest('hex');
